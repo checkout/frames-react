@@ -68,33 +68,6 @@ Make sure you wrap the card input components inside Frames wrapper component.
 </Frames>
 ```
 
-## The `props`
-
-| prop                   | description                                                                                                                                              |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| config                 | The config is an object following the reference of [Checkout.com Frames](https://docs.checkout.com/docs/frames-reference#section-configuration-options). |
-| ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                                             |
-| frameActivated         | Triggered when the form is rendered.                                                                                                                     |
-| frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                                     |
-| frameBlur              | Triggered after an input field loses focus. Use it to check the validation status and apply the wanted UI changes.                                       |
-| frameValidationChanged | Triggered when a field's validation status has changed. Use it to show error messages or update the UI.                                                  |
-| paymentMethodChanged   | Triggered when a valid payment method is detected based on the card number being entered. Use this event to change the card icon.                        |
-| cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                                 |
-| cardSubmitted          | Triggered when the card form has been submitted.                                                                                                         |
-| cardTokenized          | Triggered after a card is tokenized.                                                                                                                     |
-
-## Static `functions`
-
-| function               | description                                                                                                          |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| init                   | Initializes (or re-initializes) Frames.                                                                              |
-| isCardValid            | Returns the state of the card form validation.                                                                       |
-| submitCard             | Submits the card form if all form values are valid.                                                                  |
-| addEventHandler        | Adds a handler that is called when the specified event is triggered.                                                 |
-| removeEventHandler     | Removes a previously added handler from an event by providing the event name and handler as arguments in the method. |
-| removeAllEventHandlers | Removes all handlers added to the event specified.                                                                   |
-| enableSubmitForm       | Retains the entered card details and allows you to resubmit the payment form.                                        |
-
 ## Trigger tokenisation
 
 To trigger the tokenisation, this wrapper has a static methods called `submitCard()`
@@ -160,3 +133,30 @@ const [cardholder, setCardholder] = useState({
    }}
 />
 ```
+
+## The `props`
+
+| prop                   | description                                                                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| config                 | The config is an object following the reference of [Checkout.com Frames](https://docs.checkout.com/docs/frames-reference#section-configuration-options). |
+| ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                                             |
+| frameActivated         | Triggered when the form is rendered.                                                                                                                     |
+| frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                                     |
+| frameBlur              | Triggered after an input field loses focus. Use it to check the validation status and apply the wanted UI changes.                                       |
+| frameValidationChanged | Triggered when a field's validation status has changed. Use it to show error messages or update the UI.                                                  |
+| paymentMethodChanged   | Triggered when a valid payment method is detected based on the card number being entered. Use this event to change the card icon.                        |
+| cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                                 |
+| cardSubmitted          | Triggered when the card form has been submitted.                                                                                                         |
+| cardTokenized          | Triggered after a card is tokenized.                                                                                                                     |
+
+## Static `functions`
+
+| function               | description                                                                                                          |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| init                   | Initializes (or re-initializes) Frames.                                                                              |
+| isCardValid            | Returns the state of the card form validation.                                                                       |
+| submitCard             | Submits the card form if all form values are valid.                                                                  |
+| addEventHandler        | Adds a handler that is called when the specified event is triggered.                                                 |
+| removeEventHandler     | Removes a previously added handler from an event by providing the event name and handler as arguments in the method. |
+| removeAllEventHandlers | Removes all handlers added to the event specified.                                                                   |
+| enableSubmitForm       | Retains the entered card details and allows you to resubmit the payment form.                                        |
