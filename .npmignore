@@ -1,0 +1,9 @@
+/src
+.babelrc
+README.md
+package-lock.json
+webpack.config.js
+/public
+.prettierrc 
+.travis.yml
+**/.DS_Store
