@@ -5,7 +5,7 @@ This project is a minimalistic React wrapper of [Checkout.com Frames](https://do
 # :rocket: Install
 
 ```bash
-npm install checkout-frames-react
+npm install frames-react
 ```
 
 # :globe_with_meridians: Load the CDN
