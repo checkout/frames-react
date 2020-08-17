@@ -79,9 +79,9 @@ export interface GatewayPhone {
 }
 
 export interface FramesCardholder {
-    name?: string;
-    billingAddress?: FramesBillingAddress;
-    phone?: string;
+    name?: string | null;
+    billingAddress?: FramesBillingAddress | null;
+    phone?: string | null;
 }
 
 export interface FramesInitProps {
