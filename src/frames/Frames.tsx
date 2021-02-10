@@ -123,10 +123,10 @@ export class Frames extends Component<FramesProps> {
      *
      * @static
      * @memberof Frames
-     * @return {boolean} Card validity
+     * @return {Promise} for the response
      */
     static submitCard = () => {
-        window.Frames.submitCard();
+        return window.Frames.submitCard();
     };
 
     /**
