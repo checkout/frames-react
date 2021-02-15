@@ -108,22 +108,22 @@ export class Frames extends Component<FramesProps> {
     };
 
     /**
-     * Submits the card form if all form values are valid.
+     * Returns the state of the card form validation.
      *
      * @static
      * @memberof Frames
-     * @return {void}
+     * @return {boolean} Card validity
      */
     static isCardValid = () => {
         return window.Frames.isCardValid();
     };
 
     /**
-     * Returns the state of the card form validation.
+     * Submits the card form if all form values are valid.
      *
      * @static
      * @memberof Frames
-     * @return {boolean} Card validity
+     * @return {void}
      */
     static submitCard = () => {
         window.Frames.submitCard();

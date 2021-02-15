@@ -232,7 +232,7 @@ export interface FramesAppendedProps extends FramesProps {
     cardholder: FramesCardholder;
     init: (props?: FramesInitProps) => void;
     isCardValid: (props?: FramesProps) => boolean;
-    submitCard: (props?: FramesProps) => Promise<void>;
+    submitCard: (props?: FramesProps) => void;
     addEventHandler: (
         event: FramesEvents[keyof FramesEvents],
         eventHandler: (event: any) => void
