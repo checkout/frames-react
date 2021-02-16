@@ -123,10 +123,10 @@ export class Frames extends Component<FramesProps> {
      *
      * @static
      * @memberof Frames
-     * @return {void}
+     * @return {Promise<FrameCardTokenizedEvent>}
      */
     static submitCard = () => {
-        window.Frames.submitCard();
+        return window.Frames.submitCard();
     };
 
     /**
