@@ -39,6 +39,7 @@ it('trows error when the CDN is not included', () => {
                             alert(e.token);
                         }}
                         cardTokenizationFailed={(e) => {}}
+                        cardBinChanged={(e) => {}}
                     >
                         <CardNumber />
                         <div className="date-and-code">

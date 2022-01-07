@@ -58,6 +58,7 @@ export class Frames extends Component<FramesProps> {
             cardSubmitted: this.props.cardSubmitted,
             cardTokenized: this.props.cardTokenized,
             cardTokenizationFailed: this.props.cardTokenizationFailed,
+            cardBinChanged: this.props.cardBinChanged,
         };
 
         // Frames throws an error if the cardholder object is mentioned but not defined

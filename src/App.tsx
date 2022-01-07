@@ -10,6 +10,7 @@ function App() {
                 config={{
                     debug: true,
                     publicKey: 'pk_test_6e40a700-d563-43cd-89d0-f9bb17d35e73',
+                    modes: ['cvv_optional'],
                     localization: {
                         cardNumberPlaceholder: 'Card number',
                         expiryMonthPlaceholder: 'MM',
@@ -34,6 +35,7 @@ function App() {
                     alert(e.token);
                 }}
                 cardTokenizationFailed={(e) => {}}
+                cardBinChanged={(e) => {}}
             >
                 <CardNumber />
                 <div className="date-and-code">

@@ -93,14 +93,7 @@ export interface FramesInitProps {
     name?: string;
     cardholder?: FramesCardholder;
     localization?: FramesLanguages | FramesLocalization;
-}
-
-export interface FramesConfig {
-    publicKey: string;
-    debug?: boolean;
-    style?: FramesStyle;
-    cardholder?: FramesCardholder;
-    localization?: FramesLanguages | FramesLocalization;
+    modes?: Array<String>;
 }
 
 export interface FrameElement {
@@ -154,8 +147,13 @@ export interface FrameCardTokenizationFailedEvent {
     message: string;
 }
 
+export interface FrameCardBinChangedEvent {
+    bin: string;
+    scheme: string;
+}
+
 export interface FramesProps {
-    config: FramesConfig;
+    config: FramesInitProps;
     /**
      * Triggered when Frames is registered on the global namespace and safe to use.
      *
@@ -225,6 +223,13 @@ export interface FramesProps {
      * @memberof FramesProps
      */
     cardTokenizationFailed?: (e: FrameCardTokenizationFailedEvent) => void;
+
+    /**
+     * Triggered when the user inputs or changes the first 8 digits of a card.
+     *
+     * @memberof FramesProps
+     */
+    cardBinChanged?: (e: FrameCardBinChangedEvent) => void;
 }
 
 export interface FramesAppendedProps extends FramesProps {
