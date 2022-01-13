@@ -147,6 +147,7 @@ const [cardholder, setCardholder] = useState({
 | cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                                 |
 | cardSubmitted          | Triggered when the card form has been submitted.                                                                                                         |
 | cardTokenized          | Triggered after a card is tokenized.                                                                                                                     |
+| cardBinChanged         | Triggered when the user inputs or changes the first 8 digits of a card.                                                                                  |
 
 ## Static `functions`
 
