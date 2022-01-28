@@ -1,5 +1,5 @@
 import React from 'react';
-import { Frames, CardNumber, ExpiryDate, Cvv } from './frames';
+import { Card, Frames, CardNumber, ExpiryDate, Cvv } from './frames';
 
 import './App.css';
 
@@ -42,6 +42,7 @@ function App() {
                     <ExpiryDate />
                     <Cvv />
                 </div>
+                {/* <Card /> */}
                 <button
                     id="pay-button"
                     onClick={() => {
