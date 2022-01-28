@@ -25,7 +25,7 @@ If you use server side rendering like _Next_ you can add it in the Head:
 # :sparkles: Import the components
 
 ```js
-import { Frames, CardNumber, ExpiryDate, Cvv } from 'frames-react';
+import { Frames, Card, CardNumber, ExpiryDate, Cvv } from 'frames-react';
 ```
 
 # :muscle: Example Usage
@@ -64,6 +64,10 @@ Make sure you wrap the card input components inside Frames wrapper component.
     <CardNumber />
     <ExpiryDate />
     <Cvv />
+    {/*
+        // Alternatively, can just use Card object
+        <Card /> 
+    */}
 </Frames>
 ```
 
