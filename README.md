@@ -1,4 +1,4 @@
-This project is a minimalistic React wrapper of [Checkout.com Frames](https://docs.checkout.com/docs/frames). This version only supports the [multiple iframes](https://docs.checkout.com/docs/frames) mode.
+This project is a minimalistic React wrapper of [Checkout.com Frames](https://docs.checkout.com/docs/frames).
 
 # :rocket: Install
 

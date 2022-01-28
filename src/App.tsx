@@ -1,5 +1,5 @@
 import React from 'react';
-import { Frames, CardNumber, ExpiryDate, Cvv } from './frames';
+import { Frames, Card, CardNumber, ExpiryDate, Cvv } from './frames';
 
 import './App.css';
 
@@ -37,11 +37,12 @@ function App() {
                 cardTokenizationFailed={(e) => {}}
                 cardBinChanged={(e) => {}}
             >
-                <CardNumber />
+                {/* <CardNumber />
                 <div className="date-and-code">
                     <ExpiryDate />
                     <Cvv />
-                </div>
+                </div> */}
+                <Card />
                 <button
                     id="pay-button"
                     onClick={() => {
