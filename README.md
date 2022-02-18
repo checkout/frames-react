@@ -1,4 +1,4 @@
-This project is a minimalistic React wrapper of [Checkout.com Frames](https://docs.checkout.com/docs/frames). This version only supports the [multiple iframes](https://docs.checkout.com/docs/frames) mode.
+This project is a minimalistic React wrapper of [Checkout.com Frames](https://www.checkout.com/docs/integrate/frames). This version only supports the [multiple iframes](https://www.checkout.com/docs/integrate/frames) mode.
 
 # :rocket: Install
 
@@ -137,7 +137,7 @@ const [cardholder, setCardholder] = useState({
 
 | prop                   | description                                                                                                                                              |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| config                 | The config is an object following the reference of [Checkout.com Frames](https://docs.checkout.com/docs/frames-reference#section-configuration-options). |
+| config                 | The config is an object following the reference of [Checkout.com Frames](https://www.checkout.com/docs/integrate/frames/frames-customization-guide). |
 | ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                                             |
 | frameActivated         | Triggered when the form is rendered.                                                                                                                     |
 | frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                                     |
