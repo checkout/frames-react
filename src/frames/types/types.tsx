@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactNode } from 'react';
 
 export interface FramesEvents {
     READY: 'ready';
@@ -153,6 +154,7 @@ export interface FrameCardBinChangedEvent {
 }
 
 export interface FramesProps {
+    children?: ReactNode;
     config: FramesInitProps;
     /**
      * Triggered when Frames is registered on the global namespace and safe to use.
