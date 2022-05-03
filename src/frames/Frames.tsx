@@ -68,6 +68,12 @@ export class Frames extends Component<FramesProps> {
             delete config.cardholder;
         }
 
+        // Frames throws an error if the modes object is mentioned but not defined
+        // To avoid this we remove the property completely if not set as a prop.
+        if (!this.props.config.modes) {
+            delete config.modes;
+        }
+
         // Frames throws an error if the localization object is mentioned but not defined
         // To avoid this we remove the property completely if not set as a prop.
         if (!this.props.config.localization) {
