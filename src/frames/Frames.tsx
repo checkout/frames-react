@@ -48,6 +48,7 @@ export class Frames extends Component<FramesProps> {
             style: this.props.config.style,
             cardholder: this.props.config.cardholder,
             localization: this.props.config.localization,
+            modes: this.props.config.modes,
             ready: this.props.ready,
             frameActivated: this.props.frameActivated,
             frameFocus: this.props.frameFocus,
@@ -65,6 +66,12 @@ export class Frames extends Component<FramesProps> {
         // To avoid this we remove the property completely if not set as a prop.
         if (!this.props.config.cardholder) {
             delete config.cardholder;
+        }
+
+        // Frames throws an error if the modes object is mentioned but not defined
+        // To avoid this we remove the property completely if not set as a prop.
+        if (!this.props.config.modes) {
+            delete config.modes;
         }
 
         // Frames throws an error if the localization object is mentioned but not defined
