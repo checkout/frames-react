@@ -48,6 +48,7 @@ export class Frames extends Component<FramesProps> {
             style: this.props.config.style,
             cardholder: this.props.config.cardholder,
             localization: this.props.config.localization,
+            modes: this.props.config.modes,
             ready: this.props.ready,
             frameActivated: this.props.frameActivated,
             frameFocus: this.props.frameFocus,
