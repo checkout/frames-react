@@ -1,4 +1,4 @@
-This project is a minimalistic React wrapper of [Checkout.com Frames](https://docs.checkout.com/docs/frames). This version only supports the [multiple iframes](https://docs.checkout.com/docs/frames) mode.
+This project is a minimalistic React wrapper of [Checkout.com Frames](https://docs.checkout.com/docs/frames).
 
 # :rocket: Install
 
@@ -83,6 +83,31 @@ Here is a full example of the full flow:
 >
     <ExpiryDate />
     <Cvv />
+
+    <button
+        onClick={() => {
+            Frames.submitCard();
+        }}
+    >
+        PAY GBP 25.00
+    </button>
+</Frames>
+```
+
+# Single Line component
+
+If you want to use Frame in single frame mode you cna do it like this:
+
+```js
+<Frames
+    config={{
+        publicKey: 'pk_test_6e40a700-d563-43cd-89d0-f9bb17d35e73',
+    }}
+    cardTokenized={(e) => {
+        alert(e.token);
+    }}
+>
+    <CardFrame />
 
     <button
         onClick={() => {
