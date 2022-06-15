@@ -96,7 +96,7 @@ Here is a full example of the full flow:
 
 # Single Line component
 
-If you want to use Frame in single frame mode you cna do it like this:
+If you want to use Frame in single frame mode you can do it like this:
 
 ```js
 <Frames
