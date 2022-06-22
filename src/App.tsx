@@ -43,7 +43,7 @@ function App() {
                     <Cvv />
                 </div>
 
-                {/* Or if you want to use single frames: */}
+                {/* Or if you want to   use single frames: */}
                 {/* <CardFrame /> */}
 
                 <button

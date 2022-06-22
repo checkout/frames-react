@@ -49,6 +49,10 @@ export class Frames extends Component<FramesProps> {
             cardholder: this.props.config.cardholder,
             localization: this.props.config.localization,
             modes: this.props.config.modes,
+            schemeChoice: this.props.config.schemeChoice,
+            cardNumber: this.props.config.cardNumber,
+            expiryDate: this.props.config.expiryDate,
+            cvv: this.props.config.cvv,
             ready: this.props.ready,
             frameActivated: this.props.frameActivated,
             frameFocus: this.props.frameFocus,
@@ -66,6 +70,30 @@ export class Frames extends Component<FramesProps> {
         // To avoid this we remove the property completely if not set as a prop.
         if (!this.props.config.cardholder) {
             delete config.cardholder;
+        }
+
+        // Frames throws an error if the schemeChoice object is mentioned but not defined
+        // To avoid this we remove the property completely if not set as a prop.
+        if (!this.props.config.schemeChoice) {
+            delete config.schemeChoice;
+        }
+
+        // Frames throws an error if the cardNumber object is mentioned but not defined
+        // To avoid this we remove the property completely if not set as a prop.
+        if (!this.props.config.cardNumber) {
+            delete config.cardNumber;
+        }
+
+        // Frames throws an error if the expiryDate object is mentioned but not defined
+        // To avoid this we remove the property completely if not set as a prop.
+        if (!this.props.config.expiryDate) {
+            delete config.expiryDate;
+        }
+
+        // Frames throws an error if the cvv object is mentioned but not defined
+        // To avoid this we remove the property completely if not set as a prop.
+        if (!this.props.config.cvv) {
+            delete config.cvv;
         }
 
         // Frames throws an error if the modes object is mentioned but not defined

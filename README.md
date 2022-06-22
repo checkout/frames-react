@@ -119,6 +119,79 @@ If you want to use Frame in single frame mode you cna do it like this:
 </Frames>
 ```
 
+# For Carte Bancaire
+
+If you want to accet Carte Bancaire we provide an aditional element so that the scheme can be picked. You also need to make sure you update the config to specify the selectors. If you use Multi Frames you need to provide the selectors for schemeChoice, cardNumber, expiryDate and cvv. For Single Frames you just need the schemeChoice. Make sure you don't forget to add the SchemeChoice component, and write some CSS sso when it renders, it does not overlap your other elements.
+
+```js
+import React from 'react';
+import { Frames, CardNumber, ExpiryDate, Cvv, CardFrame, SchemeChoice } from './frames';
+
+import './App.css';
+
+function App() {
+    return (
+        <div className="App">
+            <Frames
+                config={{
+                    publicKey: 'pk_sbox_ogynfaoply5o6ksuw3d3hcee3ez',
+                    cardNumber: {
+                        frameSelector: '.card-number-frame',
+                    },
+                    expiryDate: {
+                        frameSelector: '.expiry-date-frame',
+                    },
+                    cvv: {
+                        frameSelector: '.cvv-frame',
+                    },
+                    schemeChoice: {
+                        frameSelector: '.scheme-choice-frame',
+                    },
+                    localization: 'EN-GB',
+                    debug: false,
+                }}
+                ready={() => {}}
+                frameActivated={(e) => {}}
+                frameFocus={(e) => {}}
+                frameBlur={(e) => {}}
+                frameValidationChanged={(e) => {}}
+                paymentMethodChanged={(e) => {}}
+                cardValidationChanged={(e) => {}}
+                cardSubmitted={() => {}}
+                cardTokenized={(e) => {
+                    alert(e.token);
+                }}
+                cardTokenizationFailed={(e) => {}}
+                cardBinChanged={(e) => {}}
+            >
+                <CardNumber />
+                <div className="date-and-code">
+                    <ExpiryDate />
+                    <Cvv />
+                </div>
+
+                {/* Or if you want to use single frames: */}
+                {/* <CardFrame /> */}
+
+                {/* If you you use CB and need to select the Scheme: */}
+                <SchemeChoice />
+
+                <button
+                    id="pay-button"
+                    onClick={() => {
+                        Frames.submitCard();
+                    }}
+                >
+                    PAY GBP 25.00
+                </button>
+            </Frames>
+        </div>
+    );
+}
+
+export default App;
+```
+
 # :credit_card: Cardholder
 
 If you need to inject the cardholder name on go, for cases where you render the payment form
