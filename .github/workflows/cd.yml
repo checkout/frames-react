@@ -1,10 +1,6 @@
 name: Deploy
 
 on:
-    # Set your workflow to run on pull request events that target the main branch
-    pull_request:
-        branches:
-            - master
     push:
         branches:
             - master
