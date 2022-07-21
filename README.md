@@ -81,6 +81,7 @@ Here is a full example of the full flow:
         alert(e.token);
     }}
 >
+    <CardNumber />
     <ExpiryDate />
     <Cvv />
 
@@ -121,7 +122,7 @@ If you want to use Frame in single frame mode you cna do it like this:
 
 # For Carte Bancaire
 
-If you want to accet Carte Bancaire we provide an aditional element so that the scheme can be picked. You also need to make sure you update the config to specify the selectors. If you use Multi Frames you need to provide the selectors for schemeChoice, cardNumber, expiryDate and cvv. For Single Frames you just need the schemeChoice. Make sure you don't forget to add the SchemeChoice component, and write some CSS sso when it renders, it does not overlap your other elements.
+If you want to accept Carte Bancaire we provide an additional element so that the scheme can be picked. You also need to make sure you update the config to specify the selectors. If you use Multi Frames you need to provide the selectors for schemeChoice, cardNumber, expiryDate and cvv. For Single Frames you just need the schemeChoice. Make sure you don't forget to add the SchemeChoice component, and write some CSS sso when it renders, it does not overlap your other elements.
 
 ```js
 import React from 'react';
