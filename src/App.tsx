@@ -1,5 +1,5 @@
 import React from 'react';
-import { Frames, CardNumber, ExpiryDate, Cvv } from './frames';
+import { Frames, CardNumber, ExpiryDate, Cvv, CardFrame } from './frames';
 
 import './App.css';
 
@@ -42,6 +42,10 @@ function App() {
                     <ExpiryDate />
                     <Cvv />
                 </div>
+
+                {/* Or if you want to   use single frames: */}
+                {/* <CardFrame /> */}
+
                 <button
                     id="pay-button"
                     onClick={() => {

@@ -13,6 +13,10 @@ iframe {
     height: 38px !important;
 }
 
+#schemeChoice {
+    height: 200px !important;
+}
+
 #payment-form {
     width: 280px;
     margin: 0 auto;
@@ -144,6 +148,7 @@ div+button {
 }
 
 #pay-button {
+    margin-top: 150px;
     border: none;
     border-radius: 3px;
     color: #FFF;
@@ -185,8 +190,8 @@ div+button {
 }
 
 /**
-  IE11-targeted optimisations
-   */
+IE11-targeted optimisations
+ */
 
 _:-ms-fullscreen, :root .icon-container {
     display: block;

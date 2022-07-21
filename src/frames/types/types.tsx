@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactNode } from 'react';
 
 export interface FramesEvents {
     READY: 'ready';
@@ -18,6 +19,8 @@ export interface FramesLocalization {
     expiryMonthPlaceholder: string;
     expiryYearPlaceholder: string;
     cvvPlaceholder: string;
+    cardSchemeLink?: string;
+    cardSchemeHeader?: string;
 }
 
 export type FramesLanguages = 'EN-GB' | 'ES-ES' | 'FR-FR' | 'DE-DE' | 'KR-KR' | 'IT-IT' | 'NL-NL';
@@ -41,6 +44,7 @@ export type Scheme =
     | 'Discover';
 
 export type CardType = 'Credit' | 'Debit' | 'Prepaid' | 'Charge';
+export type PreferredScheme = 'mastercard' | 'visa' | 'cartes_bancaires';
 export type CardCategory = 'Consumer' | 'Commercial';
 
 export interface FramesStyle {
@@ -84,6 +88,10 @@ export interface FramesCardholder {
     phone?: string | null;
 }
 
+export interface SelectorChoiceType {
+    frameSelector: string;
+}
+
 export interface FramesInitProps {
     debug?: boolean;
     publicKey: string;
@@ -94,6 +102,10 @@ export interface FramesInitProps {
     cardholder?: FramesCardholder;
     localization?: FramesLanguages | FramesLocalization;
     modes?: Array<String>;
+    schemeChoice?: SelectorChoiceType;
+    cardNumber?: SelectorChoiceType;
+    expiryDate?: SelectorChoiceType;
+    cvv?: SelectorChoiceType;
 }
 
 export interface FrameElement {
@@ -129,7 +141,9 @@ export interface FrameCardTokenizedEvent {
     expiry_month: string;
     expiry_year: string;
     scheme?: Scheme;
+    scheme_local: string;
     last4: string;
+    preferred_scheme?: PreferredScheme;
     bin: string;
     card_type?: CardType;
     card_category?: CardCategory;
@@ -153,6 +167,7 @@ export interface FrameCardBinChangedEvent {
 }
 
 export interface FramesProps {
+    children?: ReactNode;
     config: FramesInitProps;
     /**
      * Triggered when Frames is registered on the global namespace and safe to use.
