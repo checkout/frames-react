@@ -1,4 +1,4 @@
-This project is a minimalistic React wrapper of [Checkout.com Frames](https://docs.checkout.com/docs/frames).
+This project is a minimalistic React wrapper of [Checkout.com Frames](https://www.checkout.com/docs/integrate/frames).
 
 # :rocket: Install
 
@@ -234,19 +234,19 @@ const [cardholder, setCardholder] = useState({
 
 ## The `props`
 
-| prop                   | description                                                                                                                                              |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| config                 | The config is an object following the reference of [Checkout.com Frames](https://docs.checkout.com/docs/frames-reference#section-configuration-options). |
-| ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                                             |
-| frameActivated         | Triggered when the form is rendered.                                                                                                                     |
-| frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                                     |
-| frameBlur              | Triggered after an input field loses focus. Use it to check the validation status and apply the wanted UI changes.                                       |
-| frameValidationChanged | Triggered when a field's validation status has changed. Use it to show error messages or update the UI.                                                  |
-| paymentMethodChanged   | Triggered when a valid payment method is detected based on the card number being entered. Use this event to change the card icon.                        |
-| cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                                 |
-| cardSubmitted          | Triggered when the card form has been submitted.                                                                                                         |
-| cardTokenized          | Triggered after a card is tokenized.                                                                                                                     |
-| cardBinChanged         | Triggered when the user inputs or changes the first 8 digits of a card.                                                                                  |
+| prop                   | description                                                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| config                 | The config is an object following the reference of [Checkout.com Frames](https://www.checkout.com/docs/integrate/frames/frames-reference). |
+| ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                               |
+| frameActivated         | Triggered when the form is rendered.                                                                                                       |
+| frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                       |
+| frameBlur              | Triggered after an input field loses focus. Use it to check the validation status and apply the wanted UI changes.                         |
+| frameValidationChanged | Triggered when a field's validation status has changed. Use it to show error messages or update the UI.                                    |
+| paymentMethodChanged   | Triggered when a valid payment method is detected based on the card number being entered. Use this event to change the card icon.          |
+| cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                   |
+| cardSubmitted          | Triggered when the card form has been submitted.                                                                                           |
+| cardTokenized          | Triggered after a card is tokenized.                                                                                                       |
+| cardBinChanged         | Triggered when the user inputs or changes the first 8 digits of a card.                                                                    |
 
 ## Static `functions`
 
