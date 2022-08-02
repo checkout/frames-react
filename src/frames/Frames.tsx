@@ -46,6 +46,7 @@ export class Frames extends Component<FramesProps> {
             publicKey: this.props.config.publicKey,
             debug: this.props.config.debug || false,
             style: this.props.config.style,
+            acceptedPaymentMethods: this.props.config.acceptedPaymentMethods,
             cardholder: this.props.config.cardholder,
             localization: this.props.config.localization,
             modes: this.props.config.modes,

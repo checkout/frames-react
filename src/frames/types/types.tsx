@@ -99,6 +99,7 @@ export interface FramesInitProps {
     frameSelector?: null;
     style?: FramesStyle;
     name?: string;
+    acceptedPaymentMethods?: Array<string>;
     cardholder?: FramesCardholder;
     localization?: FramesLanguages | FramesLocalization;
     modes?: Array<String>;
@@ -132,6 +133,7 @@ export interface FrameValidationChangedEvent {
 export interface FramePaymentMethodChangedEvent {
     isValid: boolean;
     paymentMethod: PaymentMethod;
+    isPaymentMethodAccepted?: boolean;
 }
 
 export interface FrameCardTokenizedEvent {
