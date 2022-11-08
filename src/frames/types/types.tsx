@@ -232,7 +232,7 @@ export interface FramesProps {
      *
      * @memberof FramesProps
      */
-    cardTokenized: (e: FrameCardTokenizedEvent) => void;
+    cardTokenized?: (e: FrameCardTokenizedEvent) => void;
 
     /**
      * Triggered if the card tokenization fails.

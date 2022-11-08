@@ -1,6 +1,6 @@
 {
     "name": "frames-react",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "peerDependencies": {
         "react": ">=16.8"
     },
