@@ -20,9 +20,14 @@ export class Frames extends Component<FramesProps> {
     componentDidMount(): void {
         const existingScript = document.querySelector(`script[src$="${CDN}"]`);
         if (!existingScript) {
-            console.error(
-                `Checkout.com CDN not present. Perhaps you forgot to add <script src="${CDN}"></script> to your index.html file.`
-            );
+            (async () => {
+                try {
+                    await this.loadScript();
+                    this.initializeFrames();
+                } catch (error: any) {
+                    throw new Error(error);
+                }
+            })();
         } else {
             this.initializeFrames();
         }
@@ -40,6 +45,17 @@ export class Frames extends Component<FramesProps> {
         }
         return true;
     }
+
+    loadScript = () => {
+        if (typeof window === 'undefined') return; // Don't execute this function if it's rendering on server side
+        return new Promise((resolve, reject) => {
+            const scriptTag = document.createElement('script');
+            scriptTag.src = CDN;
+            scriptTag.onload = (ev) => resolve(ev);
+            scriptTag.onerror = (err) => reject(err);
+            document.body.appendChild(scriptTag);
+        });
+    };
 
     initializeFrames = () => {
         let config = {
