@@ -122,11 +122,13 @@ If you want to use Frame in single frame mode you cna do it like this:
 
 # For Carte Bancaire
 
-If you want to accept Carte Bancaire we provide an additional element so that the scheme can be picked. You also need to make sure you update the config to specify the selectors. If you use Multi Frames you need to provide the selectors for schemeChoice, cardNumber, expiryDate and cvv. For Single Frames you just need the schemeChoice. Make sure you don't forget to add the SchemeChoice component, and write some CSS sso when it renders, it does not overlap your other elements.
+If you want to accept Carte Bancaire you can pass the schemeChoice parameter in the config.
+This will render the scheme icon with a dropdown, and customers will be able to select their scheme.
+Make sure your CSS is not interfering with the display of the dropdown.
 
 ```js
 import React from 'react';
-import { Frames, CardNumber, ExpiryDate, Cvv, CardFrame, SchemeChoice } from './frames';
+import { Frames, CardNumber, ExpiryDate, Cvv, CardFrame } from 'frames-react';
 
 import './App.css';
 
@@ -136,34 +138,11 @@ function App() {
             <Frames
                 config={{
                     publicKey: 'pk_sbox_ogynfaoply5o6ksuw3d3hcee3ez',
-                    cardNumber: {
-                        frameSelector: '.card-number-frame',
-                    },
-                    expiryDate: {
-                        frameSelector: '.expiry-date-frame',
-                    },
-                    cvv: {
-                        frameSelector: '.cvv-frame',
-                    },
-                    schemeChoice: {
-                        frameSelector: '.scheme-choice-frame',
-                    },
-                    localization: 'EN-GB',
-                    debug: false,
+                    schemeChoice: true,
                 }}
-                ready={() => {}}
-                frameActivated={(e) => {}}
-                frameFocus={(e) => {}}
-                frameBlur={(e) => {}}
-                frameValidationChanged={(e) => {}}
-                paymentMethodChanged={(e) => {}}
-                cardValidationChanged={(e) => {}}
-                cardSubmitted={() => {}}
                 cardTokenized={(e) => {
                     alert(e.token);
                 }}
-                cardTokenizationFailed={(e) => {}}
-                cardBinChanged={(e) => {}}
             >
                 <CardNumber />
                 <div className="date-and-code">
@@ -173,9 +152,6 @@ function App() {
 
                 {/* Or if you want to use single frames: */}
                 {/* <CardFrame /> */}
-
-                {/* If you you use CB and need to select the Scheme: */}
-                <SchemeChoice />
 
                 <button
                     id="pay-button"
