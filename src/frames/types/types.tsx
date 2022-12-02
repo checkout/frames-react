@@ -103,7 +103,7 @@ export interface FramesInitProps {
     cardholder?: FramesCardholder;
     localization?: FramesLanguages | FramesLocalization;
     modes?: Array<String>;
-    schemeChoice?: SelectorChoiceType;
+    schemeChoice?: SelectorChoiceType | boolean;
     cardNumber?: SelectorChoiceType;
     expiryDate?: SelectorChoiceType;
     cvv?: SelectorChoiceType;
