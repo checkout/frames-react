@@ -23,7 +23,7 @@ export interface FramesLocalization {
     cardSchemeHeader?: string;
 }
 
-export type FramesLanguages = 'EN-GB' | 'ES-ES' | 'FR-FR' | 'DE-DE' | 'KR-KR' | 'IT-IT' | 'NL-NL';
+export type FramesLanguages = 'AR' | 'ZH-CH' | 'ZH-HK' | 'ZH-TW' | 'DA-DK' | 'NL-NL' | 'EN-GB' | 'FIL-PH' | 'FI-FI' | 'FR-FR' | 'DE-DE' | 'HI-IN' | 'ID-ID' | 'IT-IT' | 'JA-JP' | 'KO-KR' | 'MS-MY' | 'NB-NO' | 'ES-ES' | 'SV-SE' | 'TH-TH' | 'VI-VN';
 
 export type FrameElementIdentifer = 'card-number' | 'expiry-date' | 'cvv';
 
