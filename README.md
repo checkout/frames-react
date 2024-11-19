@@ -1,4 +1,10 @@
-This project is a minimalistic React wrapper of [Checkout.com Frames](https://www.checkout.com/docs/integrate/frames).
+# ⚠️ Deprecation Notice
+
+> This project will soon be deprecated. We recommend exploring [Checkout.com Flow](https://www.checkout.com/docs/payments/accept-payments/accept-a-payment-on-your-website) for your payment solution. A React wrapper for Flow is also in development, so stay tuned for updates.
+
+---
+
+This project is a minimalistic React wrapper of [Checkout.com Frames](https://www.checkout.com/docs/payments/accept-payments/accept-a-payment-on-your-website-with-frames).
 
 # :rocket: Install
 
@@ -6,26 +12,10 @@ This project is a minimalistic React wrapper of [Checkout.com Frames](https://ww
 npm install frames-react
 ```
 
-# :globe_with_meridians: Load the CDN
-
-Make sure that you load the CDN before you mount the Frames components. You can add it for example in your _index.html_ file.
-
-```html
-<script src="https://cdn.checkout.com/js/framesv2.min.js"></script>
-```
-
-If you use server side rendering like _Next_ you can add it in the Head:
-
-```jsx
-<Head>
-    <script src="https://cdn.checkout.com/js/framesv2.min.js"></script>
-</Head>
-```
-
 # :sparkles: Import the components
 
 ```js
-import { Frames, CardNumber, ExpiryDate, Cvv } from 'frames-react';
+import { Frames, CardNumber, ExpiryDate, Cvv } from "frames-react";
 ```
 
 # :muscle: Example Usage
@@ -34,36 +24,36 @@ Make sure you wrap the card input components inside Frames wrapper component.
 
 ```js
 <Frames
-    config={{
-        debug: true,
-        publicKey: 'pk_test_6e40a700-d563-43cd-89d0-f9bb17d35e73',
-        localization: {
-            cardNumberPlaceholder: 'Card number',
-            expiryMonthPlaceholder: 'MM',
-            expiryYearPlaceholder: 'YY',
-            cvvPlaceholder: 'CVV',
-        },
-        style: {
-            base: {
-                fontSize: '17px',
-            },
-        },
-    }}
-    ready={() => {}}
-    frameActivated={(e) => {}}
-    frameFocus={(e) => {}}
-    frameBlur={(e) => {}}
-    frameValidationChanged={(e) => {}}
-    paymentMethodChanged={(e) => {}}
-    cardValidationChanged={(e) => {}}
-    cardSubmitted={() => {}}
-    cardTokenized={(e) => {}}
-    cardTokenizationFailed={(e) => {}}
-    cardBinChanged={(e) => {}}
+  config={{
+    debug: true,
+    publicKey: "pk_XXX",
+    localization: {
+      cardNumberPlaceholder: "Card number",
+      expiryMonthPlaceholder: "MM",
+      expiryYearPlaceholder: "YY",
+      cvvPlaceholder: "CVV",
+    },
+    style: {
+      base: {
+        fontSize: "17px",
+      },
+    },
+  }}
+  ready={() => {}}
+  frameActivated={(e) => {}}
+  frameFocus={(e) => {}}
+  frameBlur={(e) => {}}
+  frameValidationChanged={(e) => {}}
+  paymentMethodChanged={(e) => {}}
+  cardValidationChanged={(e) => {}}
+  cardSubmitted={() => {}}
+  cardTokenized={(e) => {}}
+  cardTokenizationFailed={(e) => {}}
+  cardBinChanged={(e) => {}}
 >
-    <CardNumber />
-    <ExpiryDate />
-    <Cvv />
+  <CardNumber />
+  <ExpiryDate />
+  <Cvv />
 </Frames>
 ```
 
@@ -74,24 +64,24 @@ Here is a full example of the full flow:
 
 ```js
 <Frames
-    config={{
-        publicKey: 'pk_test_6e40a700-d563-43cd-89d0-f9bb17d35e73',
-    }}
-    cardTokenized={(e) => {
-        alert(e.token);
-    }}
+  config={{
+    publicKey: "pk_XXX",
+  }}
+  cardTokenized={(e) => {
+    alert(e.token);
+  }}
 >
-    <CardNumber />
-    <ExpiryDate />
-    <Cvv />
+  <CardNumber />
+  <ExpiryDate />
+  <Cvv />
 
-    <button
-        onClick={() => {
-            Frames.submitCard();
-        }}
-    >
-        PAY GBP 25.00
-    </button>
+  <button
+    onClick={() => {
+      Frames.submitCard();
+    }}
+  >
+    PAY GBP 25.00
+  </button>
 </Frames>
 ```
 
@@ -101,22 +91,22 @@ If you want to use Frame in single frame mode you cna do it like this:
 
 ```js
 <Frames
-    config={{
-        publicKey: 'pk_test_6e40a700-d563-43cd-89d0-f9bb17d35e73',
-    }}
-    cardTokenized={(e) => {
-        alert(e.token);
-    }}
+  config={{
+    publicKey: "pk_XXX",
+  }}
+  cardTokenized={(e) => {
+    alert(e.token);
+  }}
 >
-    <CardFrame />
+  <CardFrame />
 
-    <button
-        onClick={() => {
-            Frames.submitCard();
-        }}
-    >
-        PAY GBP 25.00
-    </button>
+  <button
+    onClick={() => {
+      Frames.submitCard();
+    }}
+  >
+    PAY GBP 25.00
+  </button>
 </Frames>
 ```
 
@@ -127,43 +117,43 @@ This will render the scheme icon with a dropdown, and customers will be able to 
 Make sure your CSS is not interfering with the display of the dropdown.
 
 ```js
-import React from 'react';
-import { Frames, CardNumber, ExpiryDate, Cvv, CardFrame } from 'frames-react';
+import React from "react";
+import { Frames, CardNumber, ExpiryDate, Cvv, CardFrame } from "frames-react";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-    return (
-        <div className="App">
-            <Frames
-                config={{
-                    publicKey: 'pk_sbox_ogynfaoply5o6ksuw3d3hcee3ez',
-                    schemeChoice: true,
-                }}
-                cardTokenized={(e) => {
-                    alert(e.token);
-                }}
-            >
-                <CardNumber />
-                <div className="date-and-code">
-                    <ExpiryDate />
-                    <Cvv />
-                </div>
-
-                {/* Or if you want to use single frames: */}
-                {/* <CardFrame /> */}
-
-                <button
-                    id="pay-button"
-                    onClick={() => {
-                        Frames.submitCard();
-                    }}
-                >
-                    PAY GBP 25.00
-                </button>
-            </Frames>
+  return (
+    <div className="App">
+      <Frames
+        config={{
+          publicKey: "pk_XXX",
+          schemeChoice: true,
+        }}
+        cardTokenized={(e) => {
+          alert(e.token);
+        }}
+      >
+        <CardNumber />
+        <div className="date-and-code">
+          <ExpiryDate />
+          <Cvv />
         </div>
-    );
+
+        {/* Or if you want to use single frames: */}
+        {/* <CardFrame /> */}
+
+        <button
+          id="pay-button"
+          onClick={() => {
+            Frames.submitCard();
+          }}
+        >
+          PAY GBP 25.00
+        </button>
+      </Frames>
+    </div>
+  );
 }
 
 export default App;
@@ -210,19 +200,19 @@ const [cardholder, setCardholder] = useState({
 
 ## The `props`
 
-| prop                   | description                                                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| config                 | The config is an object following the reference of [Checkout.com Frames](https://www.checkout.com/docs/integrate/frames/frames-reference). |
-| ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                               |
-| frameActivated         | Triggered when the form is rendered.                                                                                                       |
-| frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                       |
-| frameBlur              | Triggered after an input field loses focus. Use it to check the validation status and apply the wanted UI changes.                         |
-| frameValidationChanged | Triggered when a field's validation status has changed. Use it to show error messages or update the UI.                                    |
-| paymentMethodChanged   | Triggered when a valid payment method is detected based on the card number being entered. Use this event to change the card icon.          |
-| cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                   |
-| cardSubmitted          | Triggered when the card form has been submitted.                                                                                           |
-| cardTokenized          | Triggered after a card is tokenized.                                                                                                       |
-| cardBinChanged         | Triggered when the user inputs or changes the first 8 digits of a card.                                                                    |
+| prop                   | description                                                                                                                                                                                     |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| config                 | The config is an object following the reference of [Checkout.com Frames](https://www.checkout.com/docs/payments/accept-payments/accept-a-payment-on-your-website-with-frames/frames-reference). |
+| ready                  | Triggered when Frames is registered on the global namespace and safe to use.                                                                                                                    |
+| frameActivated         | Triggered when the form is rendered.                                                                                                                                                            |
+| frameFocus             | Triggered when an input field receives focus. Use it to check the validation status and apply the wanted UI changes.                                                                            |
+| frameBlur              | Triggered after an input field loses focus. Use it to check the validation status and apply the wanted UI changes.                                                                              |
+| frameValidationChanged | Triggered when a field's validation status has changed. Use it to show error messages or update the UI.                                                                                         |
+| paymentMethodChanged   | Triggered when a valid payment method is detected based on the card number being entered. Use this event to change the card icon.                                                               |
+| cardValidationChanged  | Triggered when the state of the card validation changes.                                                                                                                                        |
+| cardSubmitted          | Triggered when the card form has been submitted.                                                                                                                                                |
+| cardTokenized          | Triggered after a card is tokenized.                                                                                                                                                            |
+| cardBinChanged         | Triggered when the user inputs or changes the first 8 digits of a card.                                                                                                                         |
 
 ## Static `functions`
 
