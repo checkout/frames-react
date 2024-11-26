@@ -3,15 +3,15 @@
     "module": "ESNext",
     "target": "ES6",
     "jsx": "react",
-    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "./dist/types",
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "moduleResolution": "node",
     "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "frames-react": ["../dist"]
-    }
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": "."
   },
-  "include": ["src/**/*", "tests/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "tests"]
 }
