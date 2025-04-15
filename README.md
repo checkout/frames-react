@@ -1,7 +1,6 @@
-# ⚠️ Deprecation Notice
+# ℹ️ Information
 
-> This project will soon be deprecated. We recommend exploring [Checkout.com Flow](https://www.checkout.com/docs/payments/accept-payments/accept-a-payment-on-your-website) for your payment solution. A React wrapper for Flow is also in development, so stay tuned for updates.
-
+> We are not onboarding new merchants to Frames. Upgrade to [Flow](https://www.checkout.com/docs/payments/accept-payments/upgrade-to-flow-from-frames) instead, our pre-built, customizable payment user interface. Flow provides a more flexible, scalable, and feature-rich integration. A React wrapper for Flow is also in development, so stay tuned for updates.
 ---
 
 This project is a minimalistic React wrapper of [Checkout.com Frames](https://www.checkout.com/docs/payments/accept-payments/accept-a-payment-on-your-website-with-frames).
